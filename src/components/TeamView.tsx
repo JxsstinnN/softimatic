@@ -81,15 +81,15 @@ export function TeamView() {
       {teamMembers.map((member) => (
         <div
           key={member.id}
-          className="bg-white rounded-xl border border-slate-200 p-6 hover:shadow-lg transition-shadow"
+          className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg transition-shadow"
         >
           <div className="flex items-start space-x-4 mb-4">
             <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
               <span className="text-white font-semibold text-lg">{member.avatar}</span>
             </div>
             <div className="flex-1 min-w-0">
-              <h3 className="font-semibold text-slate-800 mb-1">{member.name}</h3>
-              <p className="text-sm text-slate-500 mb-2">{member.role}</p>
+              <h3 className="font-semibold text-slate-800 dark:text-slate-100 mb-1">{member.name}</h3>
+              <p className="text-sm text-slate-500 dark:text-slate-400 mb-2">{member.role}</p>
               <span className={`inline-flex px-2.5 py-1 rounded-full text-xs font-medium border ${member.statusColor}`}>
                 {member.status}
               </span>
@@ -98,12 +98,12 @@ export function TeamView() {
 
           <div className="mb-4">
             <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium text-slate-700">Tareas Completadas</span>
-              <span className="text-sm font-semibold text-slate-800">
+              <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Tareas Completadas</span>
+              <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">
                 {member.tasks.completed}/{member.tasks.total}
               </span>
             </div>
-            <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+            <div className="w-full h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
               <div
                 className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full transition-all"
                 style={{ width: `${member.progress}%` }}
@@ -111,15 +111,15 @@ export function TeamView() {
             </div>
           </div>
 
-          <div className="pt-4 border-t border-slate-100 space-y-2">
-            <div className="flex items-center text-sm text-slate-600">
-              <Clock className="w-4 h-4 mr-2 text-slate-400" />
+          <div className="pt-4 border-t border-slate-100 dark:border-slate-700 space-y-2">
+            <div className="flex items-center text-sm text-slate-600 dark:text-slate-400">
+              <Clock className="w-4 h-4 mr-2 text-slate-400 dark:text-slate-500" />
               <span>{member.hours}</span>
             </div>
             {member.currentTask && (
               <div className="text-sm">
-                <span className="text-slate-500">Trabajando en:</span>
-                <p className="text-slate-700 font-medium mt-1">{member.currentTask}</p>
+                <span className="text-slate-500 dark:text-slate-400">Trabajando en:</span>
+                <p className="text-slate-700 dark:text-slate-300 font-medium mt-1">{member.currentTask}</p>
               </div>
             )}
           </div>

@@ -45,18 +45,18 @@ export function ProjectsView() {
       {projects.map((project) => (
         <div
           key={project.id}
-          className="bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-lg transition-shadow group"
+          className="bg-white dark:bg-slate-800 rounded-xl border border-slate-200 dark:border-slate-700 overflow-hidden hover:shadow-lg transition-shadow group"
         >
           <div className="p-6">
             <div className="flex items-start justify-between mb-4">
               <div className="flex-1">
-                <h3 className="text-lg font-semibold text-slate-800 mb-1 group-hover:text-blue-600 transition-colors">
+                <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-1 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
                   {project.name}
                 </h3>
-                <p className="text-sm text-slate-500">{project.client}</p>
+                <p className="text-sm text-slate-500 dark:text-slate-400">{project.client}</p>
               </div>
-              <button className="p-1 hover:bg-slate-100 rounded-lg transition-colors">
-                <MoreVertical className="w-5 h-5 text-slate-400" />
+              <button className="p-1 hover:bg-slate-100 dark:hover:bg-slate-700 rounded-lg transition-colors">
+                <MoreVertical className="w-5 h-5 text-slate-400 dark:text-slate-500" />
               </button>
             </div>
 
@@ -68,10 +68,10 @@ export function ProjectsView() {
 
             <div className="mb-4">
               <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-medium text-slate-700">Progreso</span>
-                <span className="text-sm font-semibold text-slate-800">{project.progress}%</span>
+                <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Progreso</span>
+                <span className="text-sm font-semibold text-slate-800 dark:text-slate-100">{project.progress}%</span>
               </div>
-              <div className="w-full h-2 bg-slate-100 rounded-full overflow-hidden">
+              <div className="w-full h-2 bg-slate-100 dark:bg-slate-700 rounded-full overflow-hidden">
                 <div
                   className="h-full bg-gradient-to-r from-blue-500 to-blue-600 rounded-full transition-all"
                   style={{ width: `${project.progress}%` }}
@@ -80,21 +80,21 @@ export function ProjectsView() {
             </div>
 
             <div className="space-y-3 mb-4">
-              <div className="flex items-center text-sm text-slate-600">
-                <Users className="w-4 h-4 mr-2 text-slate-400" />
+              <div className="flex items-center text-sm text-slate-600 dark:text-slate-400">
+                <Users className="w-4 h-4 mr-2 text-slate-400 dark:text-slate-500" />
                 <span>{project.members} miembros</span>
-                <span className="mx-2 text-slate-300">•</span>
+                <span className="mx-2 text-slate-300 dark:text-slate-600">•</span>
                 <span>{project.tasks.completed}/{project.tasks.total} tareas</span>
               </div>
             </div>
 
-            <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-              <div className="flex items-center text-sm font-medium text-slate-700">
-                <DollarSign className="w-4 h-4 mr-1 text-slate-400" />
+            <div className="pt-4 border-t border-slate-100 dark:border-slate-700 flex items-center justify-between">
+              <div className="flex items-center text-sm font-medium text-slate-700 dark:text-slate-300">
+                <DollarSign className="w-4 h-4 mr-1 text-slate-400 dark:text-slate-500" />
                 {project.budget}
               </div>
-              <div className="flex items-center text-sm text-slate-500">
-                <Calendar className="w-4 h-4 mr-1 text-slate-400" />
+              <div className="flex items-center text-sm text-slate-500 dark:text-slate-400">
+                <Calendar className="w-4 h-4 mr-1 text-slate-400 dark:text-slate-500" />
                 {project.deadline}
               </div>
             </div>
